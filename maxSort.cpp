@@ -14,16 +14,17 @@ int main() {
 
 
     // print the unsorted v
-    /* your code here */
+    cout << "Unsorted: ";
+    print(v);/* your code here */
 
 
     // sort v
-    /* your code here */
+    maxSort(v);/* your code here */
 
 
     // print the sorted v
-    /* your code here */
-
+    cout << "Sorted: ";
+    print(v);/* your code here */
 
     return 0;
 }
@@ -34,21 +35,29 @@ int main() {
 void maxSort(vector<int>& list){
     for(int i=list.size()-1;i>=0;i--){
         /*complete the code*/
+        int current_max = 0;
 
         for(int j=0;j<=i;j++){
-            /*complete the code*/
-
+            if (list.at(j) > list.at(current_max)){
+                current_max = j;
+            }/*complete the code*/
         }
+        swap (list.at(current_max), list.at(i));
         /*complete the code*/
     }
 }
 
 // swap function
 void swap(int& a, int&b){
-    /*your code here*/
+    int temp = a;
+    a = b;
+    b = temp;
 }
 
 // print function
 void print(const vector<int>& list){
-    /*your code here*/
+    for (int i = 0; i < list.size(); i++){
+        cout << list.at(i) << " ";
+    }
+    cout << endl;
 }
