@@ -9,9 +9,8 @@ void print(const vector<int>& list);
 
 int main() {
 
-    vector<int> v(5);  // vector to be sorted
+    vector<int> v{6,1,3,2,1};  // vector to be sorted
     // initialize v
-    /* your code here */
 
 
     // print the unsorted v
