@@ -3,7 +3,7 @@
 using namespace std;
 
 // function declarations
-void maxSort(vector<int>& list, int& num);
+void maxSort(vector<int>& list);
 void swap(int& a, int& b);
 void print(const vector<int>& list);
 
@@ -19,7 +19,7 @@ int main() {
 
 
     // sort v
-    maxSort(v, i);/* your code here */
+    maxSort(v);/* your code here */
 
 
     // print the sorted v
@@ -32,16 +32,18 @@ int main() {
 /* the function definitions */
 
 //Max sort function
-void maxSort(vector<int>& list, int& j) {
+void maxSort(vector<int>& list) {
 
-    for (int i=0; i<j-1; i++)
+    int current_max = 0;
+
+    for (int i=0; i>current_max; i--)
         if (list.at(i) > list.at(i+1))
             swap(list.at(i), list.at(i+1));
 
     if (list.size() == 1){
         return;}
     else{
-        return maxSort(list, j-1);
+        return maxSort(list);
     }
 }
 
